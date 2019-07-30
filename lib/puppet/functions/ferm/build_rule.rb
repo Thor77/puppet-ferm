@@ -31,7 +31,7 @@ Puppet::Functions.create_function(:'ferm::build_rule') do
     r.each do |key, value|
       key_values << render_kv(key, value)
     end
-    unless action.nil? and action.empty?
+    unless action.nil? or action.empty?
       key_values << action
     end
     key_values.join(' ') + ';'
