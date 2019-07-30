@@ -7,7 +7,7 @@ Puppet::Functions.create_function(:'ferm::build_rule') do
   end
 
   def render_kv(key, value)
-    value = value.is_a?(Array) ? value.map(&:to_s).join(' ') : value
+    value = value.is_a?(Array) ? "(#{value.map(&:to_s).join(' ')})" : value
     "#{key} #{value}"
   end
 
@@ -34,6 +34,6 @@ Puppet::Functions.create_function(:'ferm::build_rule') do
     unless action.nil?
       key_values << action
     end
-    key_values.join ' '
+    key_values.join(' ') + ';'
   end
 end
