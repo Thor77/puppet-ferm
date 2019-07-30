@@ -1,7 +1,7 @@
 # @summary Ferm module init class
 class ferm (
   Hash $rules = {},
-  Hash $rule_defaults = {},
+  Hash $rule_defaults = $ferm::params::rule_defaults,
   String $package_name = $ferm::params::package_name,
   String $package_version = $ferm::params::package_version,
   String $service_name = $ferm::params::service_name,
