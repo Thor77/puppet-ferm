@@ -1,0 +1,7 @@
+<%- | Array[String] $rules | -%>
+# Ferm configuration
+#
+# MANAGED BY PUPPET
+<% $rules.each |$rule| { %>
+<%= $rule %>
+<% } %>
