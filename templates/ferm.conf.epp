@@ -1,7 +1,8 @@
-<%- | Array[String] $rules | -%>
+<%- | Hash $rules, Hash $rule_defaults | -%>
 # Ferm configuration
 #
 # MANAGED BY PUPPET
-<% $rules.each |$rule| { %>
-<%= $rule %>
+<% $rules.each |$comment, $rule| { %>
+# <%= $comment %>
+<%= ferm::build_rule($rule, $rule_defaults, $comment) %>
 <% } %>
