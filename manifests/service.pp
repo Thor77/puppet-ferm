@@ -1,8 +1,8 @@
-# @summary A short summary of the purpose of this class
-#
-# A description of what this class does
-#
-# @example
-#   include ferm::service
+# @summary Manage ferm service
 class ferm::service {
+  service { $ferm::service_name:
+    ensure    => 'running',
+    enable    => true,
+    subscribe => File[$ferm::config_path],
+  }
 }
