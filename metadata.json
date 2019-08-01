@@ -2,9 +2,10 @@
   "name": "thor77-ferm",
   "version": "0.1.0",
   "author": "thor77",
-  "summary": "",
+  "summary": "Install and manage ferm",
   "license": "MIT",
-  "source": "",
+  "source": "https://github.com/Thor77/puppet-ferm",
+  "issues_url": "https://github.com/Thor77/puppet-ferm/issues",
   "dependencies": [
 
   ],
